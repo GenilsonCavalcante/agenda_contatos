@@ -1,0 +1,76 @@
+@charset "UTF-8";
+
+/* 
+   *** ROOT
+   *** BODY
+   *** FONTES
+   *** HEADER
+   *** MAIN
+   *** FOOTER
+*/
+
+/* ROOT */
+:root {
+   --primary-color: #007bff;
+   --primary-text-color: #fff;
+}
+
+
+/* BODY */
+body {
+   width: 100%;
+}
+
+
+/* FONTES */
+@font-face {
+   font-family: RopaSans;
+   src: url(../fonts/RopaSans/RopaSans-Regular.ttf);
+}
+@font-face {
+   font-family: Lato;
+   src: url(../fonts/Lato/OpenSans-Regular.ttf);
+}
+@font-face {
+   font-family: Rambla;
+   src: url(../fonts/Rambla/Rambla-Regular.ttf);
+}
+
+
+/* HEADER */
+.header {
+   height: 76px;
+   width: 100%;
+   background-color: var(--primary-color);
+   font-family: Lato;
+}
+
+.header__nav {
+   max-width: 1200px;
+   height: 100%;
+   margin: 0 auto;
+   display: flex;
+   align-items: center;
+}
+
+.header__link {
+   color: var(--primary-text-color);
+   margin-right: 15px;
+}
+
+.header__logo {
+   width: 50px;
+   margin-right: 20px;
+}
+
+
+/* MAIN */
+.main {
+
+}
+
+
+/* FOOTER */
+.footer {
+   
+}
