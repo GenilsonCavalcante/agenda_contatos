@@ -1,5 +1,7 @@
-<footer class="footer">
-   <p>&copy; Genilson Cavalcante</p>
-</footer>
+   <footer class="footer">
+      <a href="#" class="footer__link">
+         <p>&copy; Genilson Cavalcante</p>
+      </a>
+   </footer>
 </body>
 </html>

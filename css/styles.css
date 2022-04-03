@@ -2,8 +2,8 @@
 
 /* 
    *** ROOT
-   *** BODY
    *** FONTES
+   *** BODY
    *** HEADER
    *** MAIN
    *** FOOTER
@@ -13,12 +13,7 @@
 :root {
    --primary-color: #007bff;
    --primary-text-color: #fff;
-}
-
-
-/* BODY */
-body {
-   width: 100%;
+   --secondary-text-color: #8d8d8d;
 }
 
 
@@ -34,6 +29,15 @@ body {
 @font-face {
    font-family: Rambla;
    src: url(../fonts/Rambla/Rambla-Regular.ttf);
+}
+
+
+/* BODY */
+body {
+   width: 100vw;
+   height: 100vh;
+   font-family: Rambla;
+   position: relative;
 }
 
 
@@ -66,11 +70,59 @@ body {
 
 /* MAIN */
 .main {
-
+   max-width: 800px;
+   margin: 0 auto;
 }
 
+.main__title {
+   text-align: center;
+   margin: 15px 0 30px;
+   font-size: 2.5rem;
+   font-weight: 500;
+   font-family: RopaSans;
+}
+
+.table-contacts {
+   width: 100%;
+   text-align: left;
+}
+.table-contacts__thead {
+   background-color: var(--primary-color);
+   color: var(--primary-text-color);
+   font-weight: bold;
+}
+.table-contacts__thead tr, 
+.table-contacts__tbody tr {
+   height: 50px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+.table-contacts__thead tr th, 
+.table-contacts__tbody tr td {
+   flex: 3;
+   padding-left: 15px;
+}
+.table-contacts__thead tr th:nth-child(1), 
+.table-contacts__tbody tr td:nth-child(1) {
+   flex: 1;
+   font-weight: bold;
+}
 
 /* FOOTER */
 .footer {
-   
+   height: 50px;
+   width: 100%;
+   position: absolute;
+   bottom: 0;
+   text-align: center;
+   font-family: RopaSans;
+}
+.footer__link {
+   color: var(--secondary-text-color);
+   transition: .5s;
+}
+.footer__link:hover {
+   color: rgb(37, 37, 37);
+   text-decoration: underline;
 }
