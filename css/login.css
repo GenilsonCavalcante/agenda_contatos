@@ -1,0 +1,187 @@
+@charset "UTF-8";
+
+/* 
+   *** ROOT
+   *** FONTES
+   *** BODY
+   *** HEADER
+   *** MESSAGE
+   *** MAIN
+   *** FOOTER
+*/
+
+/* ROOT */
+:root {
+   --primary-color: #007bff;
+   --primary-text-color: #EBEBEB;
+   --secondary-text-color: #8d8d8d;
+}
+
+/* FONTES */
+@font-face {
+   font-family: RopaSans;
+   src: url(../fonts/RopaSans/RopaSans-Regular.ttf);
+}
+@font-face {
+   font-family: Lato;
+   src: url(../fonts/Lato/OpenSans-Regular.ttf);
+}
+@font-face {
+   font-family: Rambla;
+   src: url(../fonts/Rambla/Rambla-Regular.ttf);
+}
+
+/* BODY */
+body {
+   width: 100%;
+   height: 100%;
+   font-family: Lato;
+}
+
+/* HEADER */
+.header {
+   height: 76px;
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background-color: var(--primary-color);
+}
+.header__title {
+   font-family: Lato;
+   font-size: 2rem;
+   font-weight: bold;
+   color: var(--primary-text-color);
+}
+
+
+/* MESSAGE */
+.msg-container {
+   padding: 15px;
+}
+
+.msg {
+   width: 60%;
+   margin: 0 auto;
+   padding: 10px;
+   border: solid 1px #000;
+   text-align: center;
+}
+
+.msg.error {
+   color: #842029;
+   background-color: #f8d7da;
+   border-color: #f5c2c7;
+}
+
+.msg.success {
+   color: #0f5132;
+   background-color: #d1e7dd;
+   border-color: #badbcc;
+}
+
+
+.main__form {
+   max-width: 400px;
+   margin: 30px auto 0;
+   padding-top: 30px;
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+}
+
+.main__form-login {
+   width: 100%;
+   height: 4rem;
+   margin-bottom: 50px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.main__form-img {
+   width: 60px;
+}
+
+.main__form-h2 {
+   font-size: 2.3rem;
+   font-family: RopaSans;
+   margin-left: 10px;
+}
+
+.main__form-email,
+.main__form-password,
+.main__form-confirm-password,
+.main__form-nome,
+.main__form-sobrenome {
+   display: flex;
+   flex-direction: column;
+   width: 90%;
+   margin-bottom: 13px;
+}
+
+.main__form-email label,
+.main__form-password label,
+.main__form-confirm-password label,
+.main__form-nome label,
+.main__form-sobrenome label {
+   margin: 3px;
+}
+
+.main__form-email input,
+.main__form-password input,
+.main__form-confirm-password input,
+.main__form-nome input,
+.main__form-sobrenome input {
+   border: 1px solid var(--secondary-text-color);
+   border-radius: 3px;
+   padding: 0.5rem;
+   margin: 3px;
+   font-size: 1rem;
+   transition: .5s;
+}
+.main__form-email input:focus,
+.main__form-password input:focus,
+.main__form-confirm-password input:focus,
+.main__form-nome input:focus,
+.main__form-sobrenome input:focus {
+   box-shadow: 0 0 10px var(--primary-color);
+   outline: 0;
+}
+
+.main__form-button input {
+   width: 150px;
+   height: 40px;
+   margin-top: 30px;
+   font-size: 1.1rem;
+   font-weight: bold;
+   color: var(--primary-text-color);
+   border: 3px solid var(--primary-color);
+   background-color: var(--primary-color);
+   transition: .5s;
+}
+.main__form-button input:hover {
+   background-color: transparent;
+   color: rgba(0, 0, 0, 0.669);
+}
+
+.main__form-create-account {
+   width: 100%;
+   height: 4rem;
+}
+
+.main__form-create-account p {
+   font-size: .85rem;
+   margin: 30px;
+   text-align: end;
+}
+
+.main__form-create-account a {
+   font-weight: bold;
+   color: var(--secondary-text-color);
+   transition: .5s;
+}
+.main__form-create-account a:hover {
+   color: var(--primary-color);
+   border-bottom: 1px solid var(--primary-color);
+}

@@ -1,6 +1,6 @@
 <?php
 
-   $db_name = "agenda_test";
+   $db_name = "users_agenda";
    $db_host = "localhost";
    $db_user = "root";
    $db_pass = "";

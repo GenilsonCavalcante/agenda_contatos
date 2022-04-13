@@ -1,0 +1,36 @@
+/* CREATE.PHP */
+.create-form {
+   max-width: 500px;
+   margin: 0 auto;
+   font-size: 1.1rem;
+}
+
+.create-form__section {
+   display: flex;
+   flex-direction: column;
+   margin-bottom: 20px;
+}
+
+.create-form__label {
+   margin-bottom: 8px;
+}
+
+.create-form__input,
+.create-form__textarea {
+   border: 1px solid rgb(126, 126, 126);
+   border-radius: 3px;
+   padding: 0.5rem;
+   font-size: 1rem;
+   transition: .5s;
+}
+
+.create-form__textarea {
+   font-family: Lato;
+   resize: vertical;
+}
+
+.create-form__input:focus,
+.create-form__textarea:focus {
+   box-shadow: 0 0 10px #508bca;
+   outline: 0;
+}

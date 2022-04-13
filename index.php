@@ -1,5 +1,6 @@
 <?php
-include_once("templates/header.php");
+   include_once("templates/header.php");
+   
 ?>
 <main class="main">
 
@@ -14,7 +15,7 @@ include_once("templates/header.php");
             <th scope="col">
                <!-- search -->
                <form action="" class="table-contacts__search-form">
-                  <input type="search" name="search" id="search" class="table-contacts__search-input">
+                  <input type="search" name="search" id="search" class="table-contacts__search-input" placeholder="Pesquisar">
                   <label for="search">
                      <img src="img/search.svg" alt="Icone para pesquisar">
                   </label>
