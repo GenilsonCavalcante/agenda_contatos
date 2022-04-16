@@ -26,8 +26,8 @@ if (!empty($flassMessage["msg"])) {
 </head>
 
 <body>
-   <header class="header">
-      <h1 class="header__title">Agenda</h1>
+   <header class="header-login">
+      <h1 class="header-login__title">Agenda</h1>
    </header>
    <!-- MESSAGE -->
    <?php if (!empty($flassMessage["msg"])) : ?>

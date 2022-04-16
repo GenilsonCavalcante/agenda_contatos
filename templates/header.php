@@ -1,21 +1,22 @@
 <?php
-   require_once("url.php");
-   require_once("database.php");
-   require_once("models/Message.php");
-   require_once("dao/UserDAO.php");
 
-   $message = new Message($BASE_URL);
+require_once("url.php");
+require_once("database.php");
+require_once("models/Message.php");
+require_once("dao/UserDAO.php");
 
-   $flassMessage = $message->getMessage();
+$message = new Message($BASE_URL);
 
-   if (!empty($flassMessage["msg"])) {
-      // LIMPAR A MENSAGEM
-      $message->clearMessage();
-   }
+$flassMessage = $message->getMessage();
 
-   $userDao = new UserDAO($conn, $BASE_URL);
+if (!empty($flassMessage["msg"])) {
+   // LIMPAR A MENSAGEM
+   $message->clearMessage();
+}
 
-   $userData = $userDao->verifyToken(false);
+$userDao = new UserDAO($conn, $BASE_URL);
+
+$userData = $userDao->verifyToken(false);
 
 ?>
 <!DOCTYPE html>
@@ -31,12 +32,13 @@
    <link rel="stylesheet" href="css/reset.css">
    <link rel="stylesheet" href="css/styles.css">
    <link rel="stylesheet" href="css/create.css">
+   <link rel="stylesheet" href="css/login.css">
 </head>
 
 <body>
    <header class="header">
       <nav class="header__nav">
-         <a href="<?php echo $BASE_URL; ?>/index.php" class="header__link">
+         <a href="<?php echo $BASE_URL; ?>/index.php" class="header__link header__link-logo">
             <img src="img/logo.svg" class="header__logo" alt="Logo agenda de contatos">
          </a>
          <div class="header__link-actions">
@@ -45,8 +47,8 @@
          </div>
          <!-- CAMPO USUÁRIO -->
          <div class="header__user">
-            <a href="<?php echo $BASE_URL; ?>/profile.php"><?php echo $userData->name; ?></a>
-            <a href="<?php echo $BASE_URL; ?>/logout.php">Sair</a>
+            <a href="<?php echo $BASE_URL; ?>/profile.php" class="header__link header__user-name"><?php echo $userData->name; ?></a>
+            <a href="<?php echo $BASE_URL; ?>/logout.php" class="header__link">Sair</a>
          </div>
       </nav>
    </header>

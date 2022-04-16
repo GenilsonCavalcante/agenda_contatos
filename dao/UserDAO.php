@@ -23,6 +23,7 @@
          $user->surname = $data["surname"];
          $user->email = $data["email"];
          $user->password = $data["password"];
+         $user->token = $data["token"];
 
          return $user;
 
@@ -61,19 +62,19 @@
 
       }
 
-      public function update(User $user, $redirect = true) {
+      public function update($user, $redirect = true) {
 
          $stmt = $this->conn->prepare("UPDATE users SET
             name = :name,
             surname = :surname,
-            email = :email,
+            password = :password,
             token = :token
             WHERE id = :id
          ");
 
          $stmt->bindParam(":name", $user->name);
          $stmt->bindParam(":surname", $user->surname);
-         $stmt->bindParam(":email", $user->email);
+         $stmt->bindParam(":password", $user->password);
          $stmt->bindParam(":token", $user->token);
          $stmt->bindParam(":id", $user->id);
 
@@ -82,7 +83,7 @@
          if ($redirect) {
             
             // REDIRECIONA PARA O PERFIL DO USUÁRIO
-            $this->message->setMessage("Dados atualizados com sucesso!", "success", "/index.php");
+            $this->message->setMessage("Dados atualizados com sucesso!", "success", "/profile.php");
 
          }
 
@@ -185,11 +186,13 @@
 
                // GERAR UM TOKEN E INSERIR NA SESSION
                $token = $user->generateToken();
+               $password = $user->generatePassword($password);
 
                $this->setTokenToSession($token, false);
 
-               // ATUALIZAR TOKEN NO USUÁRIO
+               // ATUALIZAR TOKEN E HASH DA SENHA NO USUÁRIO
                $user->token = $token;
+               $user->password = $password;
 
                $this->update($user, false);
 
@@ -201,6 +204,23 @@
          } else {
             return false;
          }
+
+      }
+
+      public function changePassword($user) {
+
+         $stmt = $this->conn->prepare("UPDATE users SET
+            password = :password
+            WHERE id = :id
+         ");
+
+         $stmt->bindParam(":password", $user->password);
+         $stmt->bindParam(":id", $user->id);
+
+         $stmt->execute();
+
+         // REDIRECIONAR E MOSTRAR MENSAGEM DE SUCESSO
+         $this->message->setMessage("Senha alterada com sucesso!", "success", "/profile.php");
 
       }
 

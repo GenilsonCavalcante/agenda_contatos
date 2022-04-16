@@ -1,4 +1,11 @@
 /* CREATE.PHP */
+
+/* ROOT */
+:root {
+   --primary-color: #007bff;
+   --primary-text-color: #fff;
+}
+
 .create-form {
    max-width: 500px;
    margin: 0 auto;
@@ -31,6 +38,26 @@
 
 .create-form__input:focus,
 .create-form__textarea:focus {
-   box-shadow: 0 0 10px #508bca;
+   box-shadow: 0 0 10px #007bff;
    outline: 0;
+}
+
+.create-form__div-button {
+   width: 100%;
+   text-align: center;
+}
+.create-form__button {
+   width: 150px;
+   height: 36px;
+   font-size: 1rem;
+   font-weight: bold;
+   color: var(--primary-text-color);
+   border: 3px solid var(--primary-color);
+   background-color: var(--primary-color);
+   transition: .5s;  
+}
+
+.create-form__button:hover {
+   background-color: transparent;
+   color: rgba(0, 0, 0, 0.669);
 }

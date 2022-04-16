@@ -81,9 +81,71 @@
 
       }
 
+   // ATUALIZAR DADOS DO USUÁRIO
+   } else if($type === "update") {
+      
+      $name = filter_input(INPUT_POST, "name");
+      $surname = filter_input(INPUT_POST, "surname");
+      
+      // RESGATAR DADOS DO USUÁRIO
+      $userData = $userDao->verifyToken();
+
+      // CASO HAJA ALGUMA ALTERAÇÃO, SÓ ASSIM ATUALIZA NO BD
+      if ($name != $userData->name || $surname != $userData->surname ) {
+
+         $userData->name = $name;
+         $userData->surname = $surname;
+
+         $userDao->update($userData);
+
+      } else {
+
+         $message->setMessage("Para poder enviar seus dados, deve alterá-los!", "error", "/profile.php");    
+
+      }
+
+
+      // $message->setMessage("Dados atualizados com sucesso!", "success", "back");
+
+   // ALTERAR A SENHA DO USUÁRIO
+   } else if($type === "changepassword") {
+
+      // CRIAR NOVO USUÁRIO
+      $user = new User();
+
+      $newpassword = filter_input(INPUT_POST, "newpassword");
+      $confirmnewpassword = filter_input(INPUT_POST, "confirm-newpassword");
+      $currentpassword = filter_input(INPUT_POST, "currentpassword");
+
+      // RESGATAR DADOS DO USUÁRIO
+      $userData = $userDao->verifyToken();
+
+      // VERIFICAR A SENHA DIGITADA COM A SENHA DO BD 
+      if (password_verify($currentpassword, $userData->password)) {
+
+         if ($newpassword == $confirmnewpassword) {
+
+            $finalPassword = $user->generatePassword($newpassword);
+            $userData->password = $finalPassword;
+            $userDao->changePassword($userData);
+            
+            $message->setMessage("Senha alterada com sucesso!", "success", "/profile.php");
+
+         } else {
+
+            $message->setMessage("A nova senha e a sua confirmação, estão diferentes!", "error", "/profile.php");
+
+         }
+
+      } else {
+
+         $message->setMessage("Senha atual incorreta!", "error", "/profile.php");
+
+      }
+
    } else {
 
       // MSG ERROR
-      $message->setMessage("Informações inválidas!", "error", "/index.php");
+      $this->message->setMessage("Informações inválidas!", "error", "/index.php");
       
    }

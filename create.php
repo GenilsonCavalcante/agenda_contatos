@@ -22,10 +22,12 @@ include_once("templates/header.php");
          <label for="observations" class="create-form__label">Observações:</label>
          <textarea name="observations" class="create-form__textarea" id="observations" rows="3" placeholder="Insira as observações"></textarea>
       </section>
-      <button type="submit" class="create-form__button">Cadastrar</button>
+      <div class="create-form__div-button">
+         <button type="submit" class="create-form__button">Cadastrar</button>
+      </div>
    </form>
 
 </main>
-<?php
-include_once("templates/footer.php");
-?>
+
+</body>
+</html>

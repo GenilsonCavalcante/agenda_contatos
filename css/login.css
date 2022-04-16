@@ -39,7 +39,7 @@ body {
 }
 
 /* HEADER */
-.header {
+.header-login {
    height: 76px;
    width: 100%;
    display: flex;
@@ -47,7 +47,7 @@ body {
    align-items: center;
    background-color: var(--primary-color);
 }
-.header__title {
+.header-login__title {
    font-family: Lato;
    font-size: 2rem;
    font-weight: bold;
@@ -81,6 +81,7 @@ body {
 }
 
 
+/* MAIN */
 .main__form {
    max-width: 400px;
    margin: 30px auto 0;
@@ -184,4 +185,70 @@ body {
 .main__form-create-account a:hover {
    color: var(--primary-color);
    border-bottom: 1px solid var(--primary-color);
+}
+
+/* PROFILE.PHP */
+.main__form-changepassword {
+   max-width: 400px;
+   margin: 10px auto 50px;
+   padding-top: 30px;
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+}
+
+.main__changepassword-title {
+   text-align: center;
+   font-weight: bold;
+   font-size: 1.2rem;
+   margin-top: 20px;
+}
+
+.main__changepassword-newpassword,
+.main__changepassword-confirm-newpassword, 
+.main__changepassword-currentpassword {
+   display: flex;
+   flex-direction: column;
+   width: 90%;
+   margin-bottom: 13px;
+}
+
+.main__changepassword-newpassword label, 
+.main__changepassword-confirm-newpassword label,
+.main__changepassword-currentpassword label {
+   margin: 3px;
+}
+
+.main__changepassword-newpassword input, 
+.main__changepassword-confirm-newpassword input,
+.main__changepassword-currentpassword input {
+   border: 1px solid var(--secondary-text-color);
+   border-radius: 3px;
+   padding: 0.5rem;
+   margin: 3px;
+   font-size: 1rem;
+   transition: .5s;
+}
+.main__changepassword-newpassword input:focus, 
+.main__changepassword-confirm-newpassword input:focus,
+.main__changepassword-currentpassword input:focus {
+   box-shadow: 0 0 10px var(--primary-color);
+   outline: 0;
+}
+
+.main-form__button {
+   width: 130px;
+   height: 30px;
+   margin-bottom: 20px;
+   font-size: .9rem;
+   font-weight: bold;
+   color: var(--primary-text-color);
+   border: 3px solid var(--primary-color);
+   background-color: var(--primary-color);
+   transition: .5s;  
+}
+
+.main-form__button:hover {
+   background-color: transparent;
+   color: rgba(0, 0, 0, 0.669);
 }
