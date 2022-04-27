@@ -33,6 +33,10 @@ $userData = $userDao->verifyToken(false);
    <link rel="stylesheet" href="css/styles.css">
    <link rel="stylesheet" href="css/create.css">
    <link rel="stylesheet" href="css/login.css">
+
+   <!-- JS -->
+   <!-- <script type="module" src="js/list_contacts.js"></script> -->
+
 </head>
 
 <body>

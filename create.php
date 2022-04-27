@@ -5,7 +5,7 @@ include_once("templates/header.php");
 
    <h1 class="main__title">Criar Contato</h1>
 
-   <form action="" class="create-form">
+   <form class="create-form" id="create-contact-form">
       <section class="create-form__section">
          <label for="name" class="create-form__label">Nome do Contato:</label>
          <input type="text" class="create-form__input" name="name" id="name" placeholder="Digite o nome" required>
@@ -23,11 +23,14 @@ include_once("templates/header.php");
          <textarea name="observations" class="create-form__textarea" id="observations" rows="3" placeholder="Insira as observações"></textarea>
       </section>
       <div class="create-form__div-button">
-         <button type="submit" class="create-form__button">Cadastrar</button>
+         <button type="submit" class="create-form__button" id="create_contact_button" onclick="saveContact()">Cadastrar</button>
       </div>
    </form>
 
 </main>
 
+<script src="js/crud_localstorage.js"></script>
+
 </body>
+
 </html>

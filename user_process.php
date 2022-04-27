@@ -120,26 +120,31 @@
       // RESGATAR DADOS DO USUÁRIO
       $userData = $userDao->verifyToken();
 
-      // VERIFICAR A SENHA DIGITADA COM A SENHA DO BD 
-      if (password_verify($currentpassword, $userData->password)) {
+      // VERIFICA SE OS CAMPOS FORAM TODOS PREENCHIDOS
+      if (!empty($newpassword) && !empty($confirmnewpassword) && !empty($currentpassword)) {
 
-         if ($newpassword == $confirmnewpassword) {
+         // VERIFICAR A SENHA DIGITADA COM A SENHA DO BD 
+         if (password_verify($currentpassword, $userData->password)) {
 
-            $finalPassword = $user->generatePassword($newpassword);
-            $userData->password = $finalPassword;
-            $userDao->changePassword($userData);
-            
-            $message->setMessage("Senha alterada com sucesso!", "success", "/profile.php");
+            if ($newpassword == $confirmnewpassword) {
 
+               $finalPassword = $user->generatePassword($newpassword);
+               $userData->password = $finalPassword;
+               $userDao->changePassword($userData);
+
+               $message->setMessage("Senha alterada com sucesso!", "success", "/profile.php");
+            } else {
+
+               $message->setMessage("A nova senha e a sua confirmação, estão diferentes!", "error", "/profile.php");
+            }
          } else {
 
-            $message->setMessage("A nova senha e a sua confirmação, estão diferentes!", "error", "/profile.php");
-
+            $message->setMessage("Senha atual incorreta!", "error", "/profile.php");
          }
 
       } else {
 
-         $message->setMessage("Senha atual incorreta!", "error", "/profile.php");
+         $message->setMessage("Preencha todos os campos para alterar a sua senha!", "error", "/profile.php");
 
       }
 
