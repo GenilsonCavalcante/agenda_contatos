@@ -1,23 +1,25 @@
-function updateTable() {
+const getLocalStorage = () => 
+   JSON.parse(localStorage.getItem("db_contacts"));
 
-   const getLocalStorage = () =>
-      JSON.parse(localStorage.getItem("db_contacts"));
+const readContacts = () => 
+   getLocalStorage();
 
-   const readContacts = () => getLocalStorage();
 
-   const createRow = (contact, id = 0) => {
+const updateTable = () => {
+
+   const createRow = (contact) => {
       const newRow = document.createElement("tr");
       newRow.innerHTML = `
 
-         <td scope="row">${(contact.id = id + 1)}</td>
+         <td scope="row">${contact.id}</td>
          <td scope="row">${contact.name}</td>
          <td scope="row">${contact.phone}</td>
          <td scope="row" class="table-contacts__icons">
             <!-- actions -->
-            <a href="#">
+            <a href="http://localhost/agenda_contatos/view_contact.php?id=${contact.id}">
                <img src="img/eye-regular.svg" alt="Icone para visualizar dados completos">
             </a>
-            <a href="#">
+            <a href="http://localhost/agenda_contatos/edit_contact.php?id=${contact.id}">
                <img src="img/pen-to-square-regular.svg" alt="Icone para editar os dados">
             </a>
             <a href="#">
@@ -36,25 +38,13 @@ function updateTable() {
    } else {
       console.log("Está vazio");
    }
-   
 }
-
-
 
 if (localStorage.getItem("db_contacts") != "") {
    updateTable();
 } else {
    alert("Está vazio");
 }
-
-
-
-
-
-
-
-
-
 
 // id = 1;
 // db_contacts.forEach((createRow) => {

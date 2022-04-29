@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+.main-view__container {
+   max-width: 500px;
+   margin: 0 auto;
+}
+
+.main-view__title {
+   text-align: center;
+   margin: 20px 0 50px;
+   font-size: 2.5rem;
+   font-weight: 500;
+   font-family: RopaSans;
+}
+
+.main-view__p {
+   font-size: 1.1rem;
+   margin: 15px 0;
+}
+
+.main-view__p-last {
+   margin-bottom: 40px;
+}
+
+.main-view__p--bold {
+   font-weight: bold;
+}

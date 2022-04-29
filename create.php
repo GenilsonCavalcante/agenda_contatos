@@ -1,18 +1,18 @@
 <?php
 include_once("templates/header.php");
 ?>
-<main class="main">
+<main id="main">
 
    <h1 class="main__title">Criar Contato</h1>
 
-   <form class="create-form" id="create-contact-form">
+   <form action="<?php echo $BASE_URL; ?>/index.php" class="create-form" id="create-contact-form" method="POST">
       <section class="create-form__section">
          <label for="name" class="create-form__label">Nome do Contato:</label>
          <input type="text" class="create-form__input" name="name" id="name" placeholder="Digite o nome" required>
       </section>
       <section class="create-form__section">
          <label for="phone" class="create-form__label">Telefone:</label>
-         <input type="text" class="create-form__input" name="phone" id="phone" placeholder="Digite o nome" required>
+         <input type="text" class="create-form__input" name="phone" id="phone" placeholder="Digite o telefone" required>
       </section>
       <section class="create-form__section">
          <label for="email" class="create-form__label">Email:</label>

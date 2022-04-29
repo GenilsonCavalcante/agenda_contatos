@@ -32,6 +32,7 @@ $userData = $userDao->verifyToken(false);
    <link rel="stylesheet" href="css/reset.css">
    <link rel="stylesheet" href="css/styles.css">
    <link rel="stylesheet" href="css/create.css">
+   <link rel="stylesheet" href="css/view_contact.css">
    <link rel="stylesheet" href="css/login.css">
 
    <!-- JS -->
