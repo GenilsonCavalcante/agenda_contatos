@@ -12,7 +12,7 @@
 </main>
 
 <script type="module" src="js/edit_contact.js"></script>
-<script type="module" src="js/crud_localstorage.js"></script>
+<script src="js/crud_localstorage.js"></script>
 
 </body>
 </html>

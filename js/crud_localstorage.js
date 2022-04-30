@@ -14,6 +14,11 @@ const getIdLocalStorage = () =>
    JSON.parse(localStorage.getItem("id"));
 
 
+// BROWSER URL
+const urlParams = new URLSearchParams(window.location.search);
+const myParam = urlParams.get("id");
+
+
 // CRUD
 const create = (contact) => {
    const db_contacts = read();
@@ -29,6 +34,19 @@ const update = (id, contact) => {
    db_contacts[id] = contact;
    setLocalStorage(db_contacts);
 };
+
+const deleteContact = (id) => {
+   alert("Ok");
+   const db_contacts = read();
+   const new_db_contacts = db_contacts.filter((contact) => alert(contact.id !== id));
+   // db_contacts.forEach(element => {
+   //    if(element.id == id) {
+   //       element.splice(id, 1);
+   //    }
+   //    // alert(element.id)
+   // });
+   setLocalStorage(new_db_contacts);
+}
 
 
 const isValidFields = () => {
@@ -66,24 +84,24 @@ const saveContact = () => {
 
       create(contact);
 
-      // window.location.href = "http://localhost/agenda_contatos/login.php";
    }
 };
 
 
 const updateContact = () => {
-   // alert("Upgrade");
-   // console.log("Upgrade")
-   // if (isValidFields()) {
+   alert("Upgrade");
+   console.log("Upgrade")
+   if (isValidFields()) {
+
 
       const contact = {
-         id: 1,
+         id: parseInt(myParam),
          name: document.getElementById("name").value,
          phone: document.getElementById("phone").value,
          email: document.getElementById("email").value,
          observations: document.getElementById("observations").value,
       };
 
-      update(1, contact);
-   // };
+      update(parseInt(myParam -1), contact);
+   };
 };

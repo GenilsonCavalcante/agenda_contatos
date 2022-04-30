@@ -7,6 +7,9 @@ const myParam = urlParams.get("id");
 const getLocalStorage = () => 
    JSON.parse(localStorage.getItem("db_contacts"));
 
+const setLocalStorage = (contact) =>
+   localStorage.setItem("db_contacts", JSON.stringify(contact));
+
 const readContacts = () => 
    getLocalStorage();
 
@@ -19,10 +22,6 @@ const selected_contact = db_contacts[myParam - 1]; //ACESSANDO PELO ID VINDO DO 
 // ACCESSING ELEMENTS
 const div = document.querySelector(".content-form");
 
-
-//  action="http://localhost/agenda_contatos/view_contact.php?id=${
-//       db_contacts[myParam - 1].id
-//    }"
 
 // INSERTING CONTENT
 div.innerHTML = `

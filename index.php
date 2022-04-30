@@ -1,5 +1,5 @@
 <?php
-   include_once("templates/header.php");
+include_once("templates/header.php");
 ?>
 
 <main class="main">
@@ -28,7 +28,8 @@
       </tbody>
    </table>
 </main>
-<script src="js/list_contacts.js"></script>
+<script type="module" src="js/list_contacts.js"></script>
+<script src="js/crud_localstorage.js"></script>
 <?php
 include_once("templates/footer.php");
 ?>

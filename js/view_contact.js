@@ -30,4 +30,3 @@ div.innerHTML = `
    <p class="main-view__p main-view__p-last">${db_contacts[myParam - 1].observations}</p>
 
 `;
-
