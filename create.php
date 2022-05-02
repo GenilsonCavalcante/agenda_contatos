@@ -2,6 +2,9 @@
 include_once("templates/header.php");
 ?>
 <main id="main">
+   <?php 
+      include_once("templates/back_button.php");
+   ?>
 
    <h1 class="main__title">Criar Contato</h1>
 
@@ -32,5 +35,4 @@ include_once("templates/header.php");
 <script src="js/crud_localstorage.js"></script>
 
 </body>
-
 </html>

@@ -16,7 +16,19 @@ const readContacts = () =>
 
 // ACCESS CONTACT
 const db_contacts = readContacts();
-const selected_contact = db_contacts[myParam - 1]; //ACESSANDO PELO ID VINDO DO GET
+const selected_contact = db_contacts[myParam]; //ACESSANDO PELO ID VINDO DO GET
+
+
+// let idArray = 0;
+// db_contacts.forEach((contact) => {
+
+//    alert(db_contacts.id)
+//    if (contact.id == myParam) {
+//       return true;
+//    }
+
+//    idArray++;
+// });
 
 
 // ACCESSING ELEMENTS
@@ -26,33 +38,23 @@ const div = document.querySelector(".content-form");
 // INSERTING CONTENT
 div.innerHTML = `
 
-   <form class="create-form" id="create-contact-form" method="POST" action="http://localhost/agenda_contatos/view_contact.php?id=${
-      db_contacts[myParam - 1].id
-   }">
+   <form class="create-form" id="create-contact-form" method="POST" action="http://localhost/agenda_contatos/view_contact.php?id=${myParam}">
 
       <section class="create-form__section">
          <label for="name" class="create-form__label">Nome do Contato:</label>
-         <input type="text" class="create-form__input" name="name" id="name" placeholder="Digite o nome" value="${
-            db_contacts[myParam - 1].name
-         }" required>
+         <input type="text" class="create-form__input" name="name" id="name" placeholder="Digite o nome" value="${selected_contact.name}" required>
       </section>
       <section class="create-form__section">
          <label for="phone" class="create-form__label">Telefone:</label>
-         <input type="text" class="create-form__input" name="phone" id="phone" placeholder="Digite o telefone" value="${
-            db_contacts[myParam - 1].phone
-         }" required>
+         <input type="text" class="create-form__input" name="phone" id="phone" placeholder="Digite o telefone" value="${selected_contact.phone}" required>
       </section>
       <section class="create-form__section">
          <label for="email" class="create-form__label">Email:</label>
-         <input type="text" class="create-form__input" name="email" id="email" placeholder="Digite o email" value="${
-            db_contacts[myParam - 1].email
-         }">
+         <input type="text" class="create-form__input" name="email" id="email" placeholder="Digite o email" value="${selected_contact.email}">
       </section>
       <section class="create-form__section">
          <label for="observations" class="create-form__label">Observações:</label>
-         <textarea name="observations" class="create-form__textarea" id="observations" rows="3" placeholder="Insira as observações">${
-            db_contacts[myParam - 1].observations
-         }</textarea>
+         <textarea name="observations" class="create-form__textarea" id="observations" rows="3" placeholder="Insira as observações">${selected_contact.observations}</textarea>
       </section>
       <div class="create-form__div-button">
          <button type="submit" class="create-form__button" id="create_contact_button" onclick="updateContact()">Atualizar</button>

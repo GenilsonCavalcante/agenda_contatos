@@ -3,6 +3,11 @@ include_once("templates/header.php");
 ?>
 <!-- DEPENDÊNCIA DO ARQUIVO login.css -->
 <main class="main">
+
+   <?php
+      include_once("templates/back_button.php");
+   ?>
+
    <h2 class="main__title">Perfil</h2>
 
    <form class="main__form" action="user_process.php" method="POST">

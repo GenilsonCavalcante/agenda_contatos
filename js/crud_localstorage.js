@@ -35,17 +35,41 @@ const update = (id, contact) => {
    setLocalStorage(db_contacts);
 };
 
+
+
+
+
+
+// const getIdArray = (id) => {
+//    const cnt = 0;
+
+//    alert("ID: ", id);
+
+//    db_contacts.forEach((element) => {
+//       if (element.id == id) {
+//          return cnt;
+//       } else {
+//          cnt++;
+//       }
+//    });
+// };
+
+
 const deleteContact = (id) => {
-   alert("Ok");
+
+   // let cnt = 0;
    const db_contacts = read();
-   const new_db_contacts = db_contacts.filter((contact) => alert(contact.id !== id));
+   db_contacts.splice(id, 1);
+
+   setLocalStorage(db_contacts);
+
    // db_contacts.forEach(element => {
-   //    if(element.id == id) {
-   //       element.splice(id, 1);
+   //    if (element.id == id) {
+   //       db_contacts.splice(cnt, 1);
    //    }
-   //    // alert(element.id)
-   // });
-   setLocalStorage(new_db_contacts);
+   //    cnt++;
+   // })
+
 }
 
 
@@ -79,7 +103,7 @@ const saveContact = () => {
          name: document.getElementById("name").value,
          phone: document.getElementById("phone").value,
          email: document.getElementById("email").value,
-         observations: document.getElementById("observations").value,
+         observations: document.getElementById("observations").value
       };
 
       create(contact);
@@ -89,11 +113,8 @@ const saveContact = () => {
 
 
 const updateContact = () => {
-   alert("Upgrade");
-   console.log("Upgrade")
+
    if (isValidFields()) {
-
-
       const contact = {
          id: parseInt(myParam),
          name: document.getElementById("name").value,
@@ -102,6 +123,6 @@ const updateContact = () => {
          observations: document.getElementById("observations").value,
       };
 
-      update(parseInt(myParam -1), contact);
+      update(parseInt(myParam), contact);
    };
 };

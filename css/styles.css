@@ -109,6 +109,15 @@ body {
    margin: 0 auto;
 }
 
+.main__link-form {
+   font-size: 1.03rem;
+   font-weight: bold;
+   color: var(--secondary-text-color);
+}
+.main__link-form:hover {
+   text-decoration: underline;
+}
+
 .main__title {
    text-align: center;
    margin: 15px 0 30px;
@@ -117,9 +126,36 @@ body {
    font-family: RopaSans;
 }
 
+
+/* MAIN - BACK BUTTON */
+.main__div-back-button {
+   max-width: 500px;
+   margin: 30px auto;
+}
+
+.main__back-button {
+   background-color: #FFF;
+   border-radius: 5px;
+   color: var(--primary-color);
+   font-size: 1.1rem;
+   font-weight: bold;
+   width: 80px;
+   height: 40px;
+   border: 1px solid var(--primary-color);
+   transition: .5s;
+}
+
+.main__back-button:hover {
+   background-color: #007bff;
+   color: #FFF;
+}
+
+
 .table-contacts {
    width: 100%;
    text-align: left;
+   margin-top: 70px;
+   text-align: center;
 }
 .table-contacts__thead {
    background-color: var(--primary-color);
