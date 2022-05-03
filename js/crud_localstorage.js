@@ -35,44 +35,14 @@ const update = (id, contact) => {
    setLocalStorage(db_contacts);
 };
 
-
-
-
-
-
-// const getIdArray = (id) => {
-//    const cnt = 0;
-
-//    alert("ID: ", id);
-
-//    db_contacts.forEach((element) => {
-//       if (element.id == id) {
-//          return cnt;
-//       } else {
-//          cnt++;
-//       }
-//    });
-// };
-
-
 const deleteContact = (id) => {
-
-   // let cnt = 0;
    const db_contacts = read();
    db_contacts.splice(id, 1);
-
    setLocalStorage(db_contacts);
-
-   // db_contacts.forEach(element => {
-   //    if (element.id == id) {
-   //       db_contacts.splice(cnt, 1);
-   //    }
-   //    cnt++;
-   // })
-
 }
 
 
+// VALIDATION
 const isValidFields = () => {
    let msg = "";
    let name = document.getElementById("name").value;

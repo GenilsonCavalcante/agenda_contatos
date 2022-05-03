@@ -45,6 +45,7 @@
 .create-form__div-button {
    width: 100%;
    text-align: center;
+   margin-bottom: 50px;
 }
 .create-form__button {
    width: 150px;

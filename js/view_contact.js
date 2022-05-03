@@ -4,11 +4,14 @@ const myParam = urlParams.get("id");
 
 
 // LOCALSTORAGE CONTACTS
-const getLocalStorage = () => JSON.parse(localStorage.getItem("db_contacts"));
-const readContacts = () => getLocalStorage();
+const getLocalStorage = () => 
+   JSON.parse(localStorage.getItem("db_contacts"));
+
+const readContacts = () => 
+   getLocalStorage();
 
 
-// // ACCESS CONTACT
+// ACCESS CONTACT
 const db_contacts = readContacts();
 
 
@@ -21,6 +24,7 @@ const div = document.querySelector(".main-view__container");
 div.innerHTML = `
 
    <h1 class="main-view__title">${db_contacts[myParam].name}</h1>
+
    <p class="main-view__p main-view__p--bold">Telefone:</p>
    <p class="main-view__p main-view__p-last">${db_contacts[myParam].phone}</p>
    <p class="main-view__p main-view__p--bold">Email:</p>
