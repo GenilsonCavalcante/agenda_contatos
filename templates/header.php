@@ -33,6 +33,7 @@ $userData = $userDao->verifyToken(false);
    <link rel="stylesheet" href="css/styles.css">
    <link rel="stylesheet" href="css/create.css">
    <link rel="stylesheet" href="css/view_contact.css">
+   <link rel="stylesheet" href="css/info.css">
    <link rel="stylesheet" href="css/login.css">
 
 </head>
@@ -52,6 +53,9 @@ $userData = $userDao->verifyToken(false);
             <a href="<?php echo $BASE_URL; ?>/profile.php" class="header__link header__user-name"><?php echo $userData->name; ?></a>
             <a href="<?php echo $BASE_URL; ?>/logout.php" class="header__link">Sair</a>
          </div>
+         <a href="<?php echo $BASE_URL; ?>/info.php" class="header__link">
+            <img src="img/circle-info-solid.svg" alt="Logo sobre informações" class="header__img-info">
+         </a>
       </nav>
    </header>
    <?php if (!empty($flassMessage["msg"])) : ?>

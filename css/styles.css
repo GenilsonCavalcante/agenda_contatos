@@ -59,6 +59,10 @@ body {
    align-items: center;
 }
 
+.header__img-info {
+   width: 25px;
+}
+
 .header__link {
    color: var(--primary-text-color);
    margin-right: 1rem;
@@ -72,6 +76,7 @@ body {
 .header__user {
    flex: 1;
    text-align: end;
+   margin-right: 1.5rem;
 }
 
 .header__user-name {

@@ -107,7 +107,8 @@ const search = (text) => {
    alert(text)
    db_contacts.forEach((contact) => {
 
-      if(contact.name == text) {
+      let nameContact = contact.name.toLowerCase();
+      if(nameContact == text) {
          createRow(contact, index);
       }
 

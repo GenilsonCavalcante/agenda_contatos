@@ -1,0 +1,15 @@
+.main__info {
+   max-width: 600px;
+   margin: 0 auto;
+   text-align: justify;
+}
+
+.main__info-p {
+   margin-top: 3rem;
+   margin-bottom: 2rem;
+   line-height: 20px;
+}
+
+.main__info-span {
+   font-weight: bold;
+}
