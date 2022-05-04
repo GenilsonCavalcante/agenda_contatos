@@ -3,6 +3,9 @@ include_once("templates/header.php");
 ?>
 
 <main class="main">
+   <?php
+      include_once("templates/back_button.php");
+   ?>
 
    <div class="main__info">
       <h1 class="main__title">Informações</h1>

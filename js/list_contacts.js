@@ -104,17 +104,28 @@ const search = (text) => {
 
 
    let index = 0;
-   alert(text)
+   let existContact = false;
+   
    db_contacts.forEach((contact) => {
 
       let nameContact = contact.name.toLowerCase();
       if(nameContact == text) {
          createRow(contact, index);
+         existContact = true;
       }
 
       index++;
 
    });
+
+   if (!existContact) {
+      
+      const tbody = document.querySelector(".table-contacts__tbody");
+      
+      tbody.innerHTML = `
+         <p class="main__search-p">Contato não encontrado, <a href="http://localhost/agenda_contatos/index.php">voltar</a>.</p>
+      `;
+   }
 };
 
 
