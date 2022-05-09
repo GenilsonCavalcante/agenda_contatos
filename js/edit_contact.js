@@ -1,3 +1,6 @@
+import { url } from "./url.js";
+
+
 // BROWSER URL
 const urlParams = new URLSearchParams(window.location.search);
 const myParam = urlParams.get("id");
@@ -6,9 +9,6 @@ const myParam = urlParams.get("id");
 // LOCALSTORAGE CONTACTS
 const getLocalStorage = () => 
    JSON.parse(localStorage.getItem("db_contacts"));
-
-const setLocalStorage = (contact) =>
-   localStorage.setItem("db_contacts", JSON.stringify(contact));
 
 const readContacts = () => 
    getLocalStorage();
@@ -26,7 +26,7 @@ const div = document.querySelector(".content-form");
 // INSERTING CONTENT
 div.innerHTML = `
 
-   <form class="create-form" id="create-contact-form" method="POST" action="http://localhost/agenda_contatos/view_contact.php?id=${myParam}">
+   <form class="create-form" id="create-contact-form" method="POST" action="${url}/view_contact.php?id=${myParam}">
 
       <section class="create-form__section">
          <label for="name" class="create-form__label">Nome do Contato:</label>

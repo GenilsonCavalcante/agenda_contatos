@@ -13,10 +13,3 @@ db_contacts.forEach(contact => {
    }
 });
 
-
-
-// alert("Olá");
-// if (myParam == "nada") {
-//    alert(myParam);
-// }
-// const searchContacts = () => alert(myParam);

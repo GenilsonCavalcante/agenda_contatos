@@ -36,6 +36,9 @@ $userData = $userDao->verifyToken(false);
    <link rel="stylesheet" href="css/info.css">
    <link rel="stylesheet" href="css/login.css">
 
+   <!-- JAVASCRIPT -->
+   <!-- <script src="js/url.js"></script> -->
+
 </head>
 
 <body>
